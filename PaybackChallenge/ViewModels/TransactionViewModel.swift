@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TransactionViewModel: ViewModel, Identifiable {
+final class TransactionViewModel: ViewModel, Identifiable {
     let id = UUID()
     private let model: Transaction
 
@@ -10,6 +10,10 @@ struct TransactionViewModel: ViewModel, Identifiable {
 
     var partner: String {
         model.partner
+    }
+    
+    var category: UInt {
+        model.category
     }
 
     var description: String? {

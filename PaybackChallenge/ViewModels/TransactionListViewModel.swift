@@ -2,30 +2,44 @@ import Combine
 import Foundation
 
 final class TransactionListViewModel: ViewModel, ObservableObject {
-    @Published var loadingState: LoadingState<[TransactionViewModel]> = .loading
+    var transactions = [TransactionViewModel]()
+    var categories = [UInt]()
 
-    func getTransactions() {
-        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) { [weak self] in
-            if Int.random(in: 0...1) == 1 {
+    @Published var loadingState: LoadingState = .none
+
+    func getTransactions(ofCategory category: UInt? = nil, disableLoading: Bool?) {
+        if disableLoading == .none {
+            DispatchQueue.main.async { [weak self] in
+                self?.loadingState = .loading
+            }
+        }
+        ServerMock.simulateLoadingWithRandomFailure { [weak self] result in
+            switch result {
+            case .success(_):
+                self?.readTransactions(ofCategory: category)
+            case .failure(_):
                 DispatchQueue.main.async {
                     self?.loadingState = .failure
                 }
-                print("Random failure.")
-            } else {
-                self?.readJson()
             }
         }
     }
 
-    private func readJson() {
+    private func readTransactions(ofCategory category: UInt?) {
         let reader = JSONReader(fileName: Files.transactionsMock)
         reader.readFileContent { (result: Result<TransactionList, JSONReaderError>) in
             switch result {
             case .success(let transactionList):
-                let models = transactionList.transactions.sortTransactionsByBookingDate()
-                let viewModels = models.map { transaction in TransactionViewModel(model: transaction)}
                 DispatchQueue.main.async { [weak self] in
-                    self?.loadingState = .success(viewModels)
+                    guard let self = self else { return }
+                    self.categories = transactionList.transactions.categories()
+                    switch category {
+                    case .none:
+                        self.transactions = self.prepare(transactionList)
+                    case .some(let wrapped):
+                        self.transactions = self.prepare(transactionList, filterByCategory: wrapped)
+                    }
+                    self.loadingState = .success
                 }
             case .failure(let error):
                 print(error)
@@ -34,5 +48,17 @@ final class TransactionListViewModel: ViewModel, ObservableObject {
                 }
             }
         }
+    }
+}
+
+// MARK: Helpers
+
+private extension TransactionListViewModel {
+    func prepare(_ transactionList: TransactionList) -> [TransactionViewModel] {
+        transactionList.transactions.sortByBookingDate().mapToViewModel()
+    }
+
+    func prepare(_ transactionList: TransactionList, filterByCategory category: UInt) -> [TransactionViewModel] {
+        transactionList.transactions.filterBy(category: category).sortByBookingDate().mapToViewModel()
     }
 }

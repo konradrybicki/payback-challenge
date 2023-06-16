@@ -12,4 +12,5 @@ struct FontSizes {
 
 struct ImageSizes {
     static let big: CGFloat = 100
+    static let small: CGFloat = 38
 }

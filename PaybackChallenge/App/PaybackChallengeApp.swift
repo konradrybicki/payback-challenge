@@ -11,7 +11,7 @@ import SwiftUI
 struct PaybackChallengeApp: App {
     var body: some Scene {
         WindowGroup {
-            TransactionListScreen()
+            LaunchScreen()
         }
     }
 }

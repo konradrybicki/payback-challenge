@@ -1,5 +1,6 @@
-enum LoadingState<T: ViewModel> {
+enum LoadingState {
+    case none
     case loading
-    case success(T)
+    case success
     case failure
 }

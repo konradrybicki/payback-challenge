@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		714CEB1C2A3BBB8E0012E161 /* ServerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714CEB1B2A3BBB8E0012E161 /* ServerMock.swift */; };
+		719F1CD12A39BE4200B24986 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F1CD02A39BE4200B24986 /* Connectivity.swift */; };
+		719F1CDE2A3A0DAE00B24986 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F1CDD2A3A0DAE00B24986 /* ErrorType.swift */; };
+		719F1CE02A3A3CA000B24986 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F1CDF2A3A3CA000B24986 /* LaunchScreen.swift */; };
+		719F1CE22A3A63E600B24986 /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F1CE12A3A63E600B24986 /* ConnectionStatus.swift */; };
+		719F1CE42A3A7A9700B24986 /* TransactionDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F1CE32A3A7A9700B24986 /* TransactionDetailsScreen.swift */; };
+		71C836BF2A3CBA71009A89C6 /* TransactionsSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C836BE2A3CBA71009A89C6 /* TransactionsSum.swift */; };
 		7814E55B2A1D18DC00C52720 /* PaybackChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7814E55A2A1D18DC00C52720 /* PaybackChallengeApp.swift */; };
 		7814E55F2A1D18DD00C52720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7814E55E2A1D18DD00C52720 /* Assets.xcassets */; };
 		7814E5622A1D18DD00C52720 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7814E5612A1D18DD00C52720 /* Preview Assets.xcassets */; };
@@ -49,6 +56,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		714CEB1B2A3BBB8E0012E161 /* ServerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerMock.swift; sourceTree = "<group>"; };
+		719F1CD02A39BE4200B24986 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		719F1CDD2A3A0DAE00B24986 /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
+		719F1CDF2A3A3CA000B24986 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		719F1CE12A3A63E600B24986 /* ConnectionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatus.swift; sourceTree = "<group>"; };
+		719F1CE32A3A7A9700B24986 /* TransactionDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsScreen.swift; sourceTree = "<group>"; };
+		71C836BE2A3CBA71009A89C6 /* TransactionsSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSum.swift; sourceTree = "<group>"; };
 		7814E5572A1D18DC00C52720 /* PaybackChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaybackChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7814E55A2A1D18DC00C52720 /* PaybackChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybackChallengeApp.swift; sourceTree = "<group>"; };
 		7814E55E2A1D18DD00C52720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -160,7 +174,9 @@
 		786A18D02A1D3B9C007AF3A9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				719F1CD02A39BE4200B24986 /* Connectivity.swift */,
 				786A18D12A1D3BC8007AF3A9 /* JSONReader.swift */,
+				714CEB1B2A3BBB8E0012E161 /* ServerMock.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +219,7 @@
 				78789D392A1ECA91002656DD /* Colors.swift */,
 				786A18EA2A1D6CE8007AF3A9 /* Files.swift */,
 				78CF50902A1FDFC200AE2E67 /* Sizes.swift */,
+				71C836BE2A3CBA71009A89C6 /* TransactionsSum.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -246,6 +263,8 @@
 		78789D192A1EA94A002656DD /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				719F1CE12A3A63E600B24986 /* ConnectionStatus.swift */,
+				719F1CDD2A3A0DAE00B24986 /* ErrorType.swift */,
 				78789D1A2A1EA965002656DD /* LoadingState.swift */,
 			);
 			path = Enums;
@@ -254,6 +273,8 @@
 		78789D2E2A1EBCD7002656DD /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				719F1CDF2A3A3CA000B24986 /* LaunchScreen.swift */,
+				719F1CE32A3A7A9700B24986 /* TransactionDetailsScreen.swift */,
 				78789D2C2A1EBCCB002656DD /* TransactionListScreen.swift */,
 			);
 			path = Screens;
@@ -360,8 +381,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				719F1CE42A3A7A9700B24986 /* TransactionDetailsScreen.swift in Sources */,
 				78789D2D2A1EBCCB002656DD /* TransactionListScreen.swift in Sources */,
 				78789D3A2A1ECA91002656DD /* Colors.swift in Sources */,
+				719F1CD12A39BE4200B24986 /* Connectivity.swift in Sources */,
 				78789D1F2A1EB1E1002656DD /* TransactionViewModel.swift in Sources */,
 				78789D0D2A1E6CD1002656DD /* Date+Ext.swift in Sources */,
 				78789D252A1EBAA9002656DD /* TransactionList.swift in Sources */,
@@ -376,13 +399,18 @@
 				786A18D22A1D3BC8007AF3A9 /* JSONReader.swift in Sources */,
 				78789D1D2A1EAD3D002656DD /* String+Ext.swift in Sources */,
 				786A18EB2A1D6CE8007AF3A9 /* Files.swift in Sources */,
+				714CEB1C2A3BBB8E0012E161 /* ServerMock.swift in Sources */,
 				78789D362A1EC08E002656DD /* LoadingView.swift in Sources */,
 				78CF508D2A1FB99A00AE2E67 /* TransactionListView.swift in Sources */,
 				78789D232A1EB395002656DD /* ViewModel.swift in Sources */,
+				719F1CDE2A3A0DAE00B24986 /* ErrorType.swift in Sources */,
+				719F1CE22A3A63E600B24986 /* ConnectionStatus.swift in Sources */,
 				7814E55B2A1D18DC00C52720 /* PaybackChallengeApp.swift in Sources */,
+				719F1CE02A3A3CA000B24986 /* LaunchScreen.swift in Sources */,
 				786A19022A1E69CF007AF3A9 /* Array+Ext.swift in Sources */,
 				786A18E82A1D6385007AF3A9 /* JSONContent.swift in Sources */,
 				78789D292A1EBADE002656DD /* Alias.swift in Sources */,
+				71C836BF2A3CBA71009A89C6 /* TransactionsSum.swift in Sources */,
 				78789D1B2A1EA965002656DD /* LoadingState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

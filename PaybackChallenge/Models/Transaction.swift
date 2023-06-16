@@ -1,7 +1,7 @@
 final class Transaction: Decodable {
     let partner: String
     let alias: Alias
-    let category: Int
+    let category: UInt
     let details: TransactionDetails
     
     enum CodingKeys: String, CodingKey {
@@ -13,7 +13,7 @@ final class Transaction: Decodable {
 
     init(partner: String,
          alias: Alias,
-         category: Int,
+         category: UInt,
          details: TransactionDetails) {
         self.partner = partner
         self.alias = alias
